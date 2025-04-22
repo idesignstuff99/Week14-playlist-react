@@ -2,7 +2,7 @@ type SongsProps = {
     id: number,
     artist: string,
     name: string,
-    plays?: string
+    plays?: string,
 }
 export default function Songs(props: SongsProps) {
     const { id, artist, name, plays, setPlaylist, playlist } = props;
