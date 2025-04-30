@@ -20,24 +20,28 @@ const handleDelete = (idToDelete) => {
                     My Playlist
               </div>
               <div className="card-body">
-                {playlist.map((list)=> {
-                  return(
-                    <div className="card-body">
-                      <p className="card-text">{list.id}</p>
-                      <h5 className="card-title">{list.artist}</h5>
-                      <p className="card-text">{list.name}</p>
-                      <h6 className="card-subtitle mb-2 text-muted">{list.plays}</h6>
-                    <button 
-                    className="btn btn-danger m-1" type="button" onClick={() => handleDelete(list.id)}>
-                      Delete
-                      </button>
-                    <hr style={{ 
-                                  border: 'none', 
-                                  height: '1px', 
-                                  backgroundColor: 'black' 
-                              }} />
-                    </div>
-                  )
+                {playlist.filter((list)=> {
+
+                  console.log(list);
+                  if (list.isPlaylist) {
+                    return(
+                      <div className="card-body">
+                        <p className="card-text">{list.id}</p>
+                        <h5 className="card-title">{list.artist}</h5>
+                        <p className="card-text">{list.name}</p>
+                        <h6 className="card-subtitle mb-2 text-muted">{list.plays}</h6>
+                      <button 
+                      className="btn btn-danger m-1" type="button" onClick={() => handleDelete(list.id)}>
+                        Delete
+                        </button>
+                      <hr style={{ 
+                                    border: 'none', 
+                                    height: '1px', 
+                                    backgroundColor: 'black' 
+                                }} />
+                      </div>
+                    )
+                  }
                 })}
                 </div>
             </div>

@@ -13,7 +13,12 @@ export default function Sidebar({songs,setPlaylist,playlist}) {
 
     const song = songs.map((song,index) => {
         return <Songs key= { index }
-                        id={ song.id } artist={ song.artist } name={ song.name} plays={ song.plays }   setPlaylist={setPlaylist} playlist={playlist}/>
+                        id={ song.id } 
+                        artist={ song.artist } 
+                        name={ song.name} 
+                        plays={ song.plays }   
+                        setPlaylist={setPlaylist} 
+                        playlist={playlist}/>
     });
     
   return (
